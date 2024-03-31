@@ -10,22 +10,6 @@ class QuestionsScreen extends StatefulWidget {
 class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                Color(0xFF64B5F6),
-                Color(0xFF1976D2),
-              ],
-            ),
-          ),
-          child: const Text('Questions Screen'),
-        ),
-      ),
-    );
+    return const Text('Questions Screen');
   }
 }
