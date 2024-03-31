@@ -11,6 +11,7 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  /* 1ere methode
   Widget? activeScreen;
 
   @override
@@ -20,9 +21,19 @@ class _QuizState extends State<Quiz> {
   }
 
   void switchScreen() {
+    setState(() {
+      activeScreen = QuestionsScreen();
+    });
+  }
+
+  */
+
+  var activeScreen = 'start-screen';
+
+  void switchScreen() {
     setState(
       () {
-        activeScreen = const QuestionsScreen();
+        activeScreen = 'questions-screen';
       },
     );
   }
@@ -42,7 +53,9 @@ class _QuizState extends State<Quiz> {
               ],
             ),
           ),
-          child: activeScreen,
+          child: activeScreen == 'start-screen'
+              ? StartScreen(switchScreen)
+              : QuestionsScreen(),
         ),
       ),
     );
